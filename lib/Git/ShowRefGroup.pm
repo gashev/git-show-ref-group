@@ -47,7 +47,7 @@ with the associated commit IDs group by IDs.
 
 =head1 SYNOPSIS
 
-  git-show-ref-groups
+  git-show-ref-group
 
 =head1 DESCRIPTION
 
