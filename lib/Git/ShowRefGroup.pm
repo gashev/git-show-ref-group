@@ -1,11 +1,9 @@
 package Git::ShowRefGroup;
+
 use strict;
 use warnings;
 
-{
-    $Git::ShowRefGroup::VERSION = '0.001';
-}
-
+our $VERSION = '0.001';
 
 use Git::Repository;
 
