@@ -7,9 +7,6 @@ our $VERSION = '0.001';
 
 use Git::Repository;
 
-use base qw(Class::Accessor);
-Git::ShowRefGroup->mk_accessors(qw(work_tree));
-
 sub new {
     my $class = shift;
     my $self = {};
@@ -21,15 +18,14 @@ sub run {
     my $commit;
     my $ref;
     my $refs = {};
+    my $repository = Git::Repository->new();
 
-    my $repository = Git::Repository->new(work_tree => $self->work_tree);
-
-    for my $line ($repository->run('show-ref')) {
+    for my $line ($repository->run('show-ref', @_)) {
         ($commit, $ref) = split ' ', $line;
         push @{$refs->{$commit}}, $ref;
     }
 
-    for $commit (sort keys %{$refs}) {
+    for $commit (keys %{$refs}) {
         printf "%s %s\n", $commit, join(' ', @{$refs->{$commit}});
     }
 }

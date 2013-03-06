@@ -7,7 +7,6 @@ our $VERSION = '0.001';
 
 use Cwd;
 use Git::ShowRefGroup;
-
-my $showRefGroup = Git::ShowRefGroup->new(work_tree => getcwd);
-$showRefGroup->run();
+my $showRefGroup = Git::ShowRefGroup->new();
+$showRefGroup->run(@ARGV);
 
