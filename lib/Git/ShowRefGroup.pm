@@ -22,7 +22,7 @@ sub run {
 
     for my $line ($repository->run('show-ref', @_)) {
         ($commit, $ref) = split ' ', $line;
-        push @{$refs->{$commit}}, $ref;
+        push(@{$refs->{$commit}}, ((defined $ref) ? $ref : ''));
     }
 
     for $commit (keys %{$refs}) {
