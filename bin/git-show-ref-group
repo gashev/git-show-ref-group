@@ -34,7 +34,7 @@ commit IDs. Results can be filtered using a pattern and tags can be dereference
 into object IDs. Additionally, it can be used to test whether a particular ref
 exists.
 
-=head1 DESCRIPTION
+=head1 OPTIONS
 
 The same as git-show-ref.
 

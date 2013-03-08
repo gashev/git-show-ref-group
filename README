@@ -18,7 +18,7 @@ DESCRIPTION
     can be dereference into object IDs. Additionally, it can be used to test
     whether a particular ref exists.
 
-DESCRIPTION
+OPTIONS
     The same as git-show-ref.
 
 AUTHOR
