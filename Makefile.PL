@@ -6,7 +6,8 @@ WriteMakefile(
     ABSTRACT     => 'Displays references available in a local repository along with the associated commit IDs group by IDs.',
     PREREQ_PM    => {
         'Git::Repository' => 0,
-        'Test::Simple' => 0.44,
+        'Test::Simple'    => 0.44,
     },
+    EXE_FILES    => ['bin/git-show-ref-group'],
 );
 
