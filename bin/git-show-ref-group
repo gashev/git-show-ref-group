@@ -7,7 +7,7 @@ our $VERSION = '0.001';
 
 use Git::ShowRefGroup;
 my $showRefGroup = Git::ShowRefGroup->new();
-$showRefGroup->run(@ARGV);
+exit($showRefGroup->run(@ARGV));
 
 __END__
 

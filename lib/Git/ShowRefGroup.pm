@@ -5,7 +5,7 @@ use warnings;
 
 our $VERSION = '0.001';
 
-use Git::Repository;
+use Git::Repository::Command;
 
 sub new {
     my $class = shift;
@@ -18,9 +18,11 @@ sub run {
     my $commit;
     my $ref;
     my $refs = {};
-    my $repository = Git::Repository->new();
+    my $command = Git::Repository::Command->new('show-ref', @_);
+    my $fhStdout = $command->stdout();
+    my $fhStderr = $command->stderr();
 
-    for my $line ($repository->run('show-ref', @_)) {
+    for my $line (<$fhStdout>) {
         ($commit, $ref) = split ' ', $line;
         push(@{$refs->{$commit}}, ((defined $ref) ? $ref : ''));
     }
@@ -28,6 +30,11 @@ sub run {
     for $commit (keys %{$refs}) {
         printf "%s %s\n", $commit, join(' ', @{$refs->{$commit}});
     }
+
+    print STDERR <$fhStderr>;
+    $command->close();
+
+    return ($command->exit());
 }
 
 1;
