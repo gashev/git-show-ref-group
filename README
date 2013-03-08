@@ -1,9 +1,16 @@
 NAME
-    Git::ShowRefGroup - Displays references available in a local repository
+    git-show-ref-group - Displays references available in a local repository
     along with the associated commit IDs group by IDs.
 
 SYNOPSIS
-      git-show-ref-group
+        # displays a references available in a local repository
+        % git-show-ref-group
+
+        # limit to only "refs/heads", respectively.
+        % git-show-ref-group --heads
+
+        # limit to only "refs/tags", respectively.
+        % git-show-ref-group --tags
 
 DESCRIPTION
     Displays references available in a local repository along with the
@@ -11,9 +18,9 @@ DESCRIPTION
     can be dereference into object IDs. Additionally, it can be used to test
     whether a particular ref exists.
 
-USAGE
-BUGS
-SUPPORT
+DESCRIPTION
+    The same as git-show-ref.
+
 AUTHOR
         Oleg Gashev
         gashev@gmail.com
@@ -26,5 +33,5 @@ COPYRIGHT
     with this module.
 
 SEE ALSO
-    perl(1).
+    git-show-ref(1)
 
