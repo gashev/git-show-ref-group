@@ -32,35 +32,36 @@ sub run {
 
 1;
 
-#################### main pod documentation begin ###################
+__END__
 
 =head1 NAME
 
 Git::ShowRefGroup - Displays references available in a local repository along
 with the associated commit IDs group by IDs.
 
-=head1 SYNOPSIS
-
-  git-show-ref-group
-
 =head1 DESCRIPTION
 
-Displays references available in a local repository along with the associated
-commit IDs. Results can be filtered using a pattern and tags can be dereference
-into object IDs. Additionally, it can be used to test whether a particular ref
-exists.
+See L<git-show-ref-group>
 
-=head1 USAGE
+=head1 METHODS
 
+=over
 
+=item new()
 
-=head1 BUGS
+Creates a new Git::ShowRefGroup object.
 
+=back
 
+=over
 
-=head1 SUPPORT
+=item run(@options)
 
+Execute git-show-ref with options @options. Parse output of git-show-ref and
+displays references available in a local repository along with the associated
+commit IDs group by IDs.
 
+=back
 
 =head1 AUTHOR
 
@@ -77,9 +78,7 @@ this module.
 
 =head1 SEE ALSO
 
-perl(1).
+git-show-ref(1).
 
 =cut
-
-#################### main pod documentation end ###################
 
